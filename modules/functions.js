@@ -163,3 +163,6 @@ module.exports = (client) => {
 		console.error("Uncaught Promise Error: ", err);
 	});
 };
+
+
+//thx ctc

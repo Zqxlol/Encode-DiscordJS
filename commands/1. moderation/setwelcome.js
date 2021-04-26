@@ -1,4 +1,4 @@
-const Discord = require("discord.js")
+const discord = require("discord.js")
 const db = require("quick.db")
 
 module.exports = {
@@ -11,12 +11,22 @@ module.exports = {
     let channel = message.mentions.channels.first()
     
     if(!channel) {
-      return message.channel.send("Please Mention the channel first")
+       const setwelcme = new discord.MessageEmbed()
+             .setTitle('Action [WELCOME]')
+             .setColor('#ff2050')
+             .addField('Invalid Argument', 'Mention a Channel');
+
+             message.channel.send(setwelcme);
     }
     
     
     db.set(`welchannel_${message.guild.id}`, channel.id)
     
-    message.channel.send(`Welcome Channel is Now ${channel}`)
-  }
+    let setwelcme = new discord.MessageEmbed()
+             .setTitle('Action [WELCOME]')
+             .setColor('GREEN')
+             .addField('Success!', `Welcome Channel Is now ${channel}`);
+
+             message.channel.send(setwelcme);
+    }
 }

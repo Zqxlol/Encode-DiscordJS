@@ -1,5 +1,6 @@
 const { token } = require("./config.json");
 const keepalive = require("./server.js");
+const express = require('express');
 const discord = require("discord.js");
 const client = new discord.Client({
   disableEveryone: true 
@@ -68,13 +69,7 @@ client.on('guildMemberAdd', async member => {
 
 client.on("ready", () =>{
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setPresence({
-        status: "online",
-        game: {
-            name: "www.encode.gq | ?help",
-            type: "PLAYING"
-        }
-    });
- });
+    client.user.setActivity(`?help | Currently in ${client.guilds.cache.size} Servers!`, { type: 'PLAYING' })
+});
 
 client.login(process.env.TOKEN); 

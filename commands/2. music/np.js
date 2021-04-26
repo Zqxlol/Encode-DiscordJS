@@ -1,7 +1,7 @@
 const discord = require("discord.js")
 
 module.exports = {
-	name: 'stop',
+	name: 'np',
 	description: 'Disabled.',
   aliases: ["p", "stop", "skip", "s", "np", "now-playing", "q", "queue"],
 	usage: 'Disabled.',

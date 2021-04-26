@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const discord = require("discord.js");
 
 module.exports = {
   name: "mute",
@@ -7,23 +7,41 @@ module.exports = {
   usage: "mute <@mention> <reason>",
   run: async (client, message, args) => {
     if (!message.member.hasPermission("MANAGE_ROLES")) {
-      return message.channel.send(
-        "Sorry but you do not have permission to mute anyone"
-      );
+      const mute = new discord.MessageEmbed()
+             .setTitle('Action [MUTE]')
+             .setColor('#ff2050')
+             .addField('Invalid Argument', 'No Permission!.');
+
+             message.channel.send(mute);
     }
 
     if (!message.guild.me.hasPermission("MANAGE_ROLES")) {
-      return message.channel.send("I do not have permission to manage roles.");
+      const mute = new discord.MessageEmbed()
+             .setTitle('Action [MUTE]')
+             .setColor('#ff2050')
+             .addField('Invalid Argument', `Can't Manage Roles.`);
+
+             message.channel.send(mute);
     }
 
     const user = message.mentions.members.first();
     
     if(!user) {
-      return message.channel.send("Please mention the member to who you want to mute")
+      const mute = new discord.MessageEmbed()
+             .setTitle('Action [MUTE]')
+             .setColor('#ff2050')
+             .addField('Invalid Argument', `Mention an User.`);
+
+             message.channel.send(mute);
     }
     
     if(user.id === message.author.id) {
-      return message.channel.send("-_-");
+      const mute = new discord.MessageEmbed()
+             .setTitle('Action [MUTE]')
+             .setColor('#ff2050')
+             .addField('Invalid Argument', `Can't Mute That User!`);
+
+             message.channel.send(mute);
     }
     
     
@@ -31,7 +49,12 @@ module.exports = {
     
     
     if(!reason) {
-      return message.channel.send("Please Give the reason to mute the member")
+      const mute = new discord.MessageEmbed()
+             .setTitle('Action [MUTE]')
+             .setColor('#ff2050')
+             .addField('Invalid Argument', 'Provide a Reason.');
+
+             message.channel.send(mute);
     }
     
     
@@ -39,12 +62,22 @@ module.exports = {
     
     
       if(!muterole) {
-      return message.channel.send("This server do not have role with name `Muted`")
+      const mute = new discord.MessageEmbed()
+             .setTitle('Action [MUTE]')
+             .setColor('#ff2050')
+             .addField('Invalid Argument', 'No Role Named "Muted".');
+
+             message.channel.send(mute);
     }
     
     
    if(user.roles.cache.has(muterole)) {
-      return message.channel.send("Given User is already muted")
+      const mute = new discord.MessageEmbed()
+             .setTitle('Action [MUTE]')
+             .setColor('#ff2050')
+             .addField('Invalid Argument', 'That User Is Already Muted.');
+
+             message.channel.send(mute);
     }
     
   
@@ -53,6 +86,15 @@ module.exports = {
     user.roles.add(muterole)
     
 await message.channel.send(`You muted **${message.mentions.users.first().username}** For \`${reason}\``)
+
+let embed = new discord.MessageEmbed()
+    .setTitle("Action [MUTE]")
+    .setDescription(`MUTED ${target} (${target.id})`)
+    .setColor("GREEN")
+    .setFooter(`You Muted ${message.mentions.users.first().username} For \`${reason}\``)
+    .setFooter(client.user.username, client.user.displayAvatarURL());
+
+    message.channel.send(embed)
     
     user.send(`You are muted in **${message.guild.name}** For \`${reason}\``)
     

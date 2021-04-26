@@ -8,31 +8,55 @@ module.exports = {
   run: (client, message, args) => {
     
     if(!message.member.hasPermission("KICK_MEMBERS")) {
-      return message.channel.send(`**${message.author.username}**, You do not have enough permission to use this command`)
+      const kick = new discord.MessageEmbed()
+             .setTitle('Action [KICK]')
+             .setColor('#ff2050')
+             .addField('Invalid Argument', 'No Permission!.');
+
+             message.channel.send(kick);
     }
     
     if(!message.guild.me.hasPermission("KICK_MEMBERS")) {
-      return message.channel.send(`**${message.author.username}**, I do not have enough permission to use this command`)
+      const kick = new discord.MessageEmbed()
+             .setTitle('Action [KICK]')
+             .setColor('#ff2050')
+             .addField('Invalid Argument', `I Don't Have Permission.`);
+
+             message.channel.send(kick);
     }
     
     let target = message.mentions.members.first();
     
     if(!target) {
-      return message.channel.send(`**${message.author.username}**, Please mention the person who you want to kick`)
+      const kick = new discord.MessageEmbed()
+             .setTitle('Action [KICK]')
+             .setColor('#ff2050')
+             .addField('Invalid Argument', `Mention An User.`);
+
+             message.channel.send(kick);
     }
     
     if(target.id === message.author.id) {
-     return message.channel.send(`**${message.author.username}**, You can not kick yourself`)
+     const kick = new discord.MessageEmbed()
+             .setTitle('Action [KICK]')
+             .setColor('#ff2050')
+             .addField('Invalid Argument', `I Can't Kick That Person!`);
+
+             message.channel.send(kick);
     }
     
   if(!args[1]) {
-    return message.channel.send(`**${message.author.username}**, Please Give Reason to Kick`)
-  }
+    const kick = new discord.MessageEmbed()
+             .setTitle('Action [KICK]')
+             .addField('Invalid Argument', `Please Provide a Reason.`);
+
+             message.channel.send(kick);
+    }
     
     let embed = new discord.MessageEmbed()
-    .setTitle("Action: Kick")
+    .setTitle("Action [KICK]")
     .setDescription(`Kicked ${target} (${target.id})`)
-    .setColor("#ff2050")
+    .setColor("GREEN")
     .setFooter(`Kicked by ${message.author.username}`)
     .setFooter(client.user.username, client.user.displayAvatarURL());
     

@@ -31,9 +31,10 @@ class Util {
     let newxp = oldxp + toadd;
     let newlvl = Util.getLevel(newxp);
     
-    
-    if(newlvl > oldlvl) message.channel.send(`${message.author}, You Just Leveled Up To ${newlvl}!`)
-    
+    const Rngmsg = [`${message.author}, Just Advanced to Level ${newlvl}`, `${message.author}, Just Advanced to Level ${newlvl}, Keep Chatting!`]
+    const rngIndex = Math.floor(Math.random()* Rngmsg.length);
+
+    if(newlvl > oldlvl) message.channel.send(`${Rngmsg[rngIndex]}`)
     db.add(`xp_${message.author.id}_${message.guild.id}`, toadd)
   }
 }

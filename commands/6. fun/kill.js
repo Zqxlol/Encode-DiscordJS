@@ -7,7 +7,7 @@ module.exports = {
     category: "fun",
     run:async(client,message,args)=>{
         const target = message.mentions.users.first()
-        const DyingWays = ['Scooter ankle R.I.P','Putting a toaster in the bath','promising ur son robux','insulting gurenge that idiot','watching gacha','watching a netflix adaptation','insulting e']
+        const DyingWays = ['Playing GTA For 10 Hours', '${Rngmsg}']
         const dyingIndex = Math.floor(Math.random()* DyingWays.length);
         message.channel.send(`${target} died by ${DyingWays[dyingIndex]} `)
     }

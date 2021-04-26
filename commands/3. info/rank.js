@@ -18,7 +18,7 @@ module.exports = {
     }
 
     if (user.bot) {
-      return message.channel.send("Bot do not have levels")
+      return message.channel.send("This User Is Not Allowed to Level Up / Recive Xp Points ")
     }
 
     let xp = db.get(`xp_${user.id}_${message.guild.id}`) || 0;

@@ -119,3 +119,6 @@ function is_url(str) {
   }
   
 }
+
+
+//thx worn-off-keys
