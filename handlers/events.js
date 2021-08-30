@@ -28,9 +28,9 @@ module.exports = (client) => {
 
     } catch(err) {
 
-  console.log("Error While loading/executing command, join for help : https://discord.gg/fUJUCFuMVW")
+  console.log("Error While loading/executing command, Something On Module Struct")
   console.log(err)
-  table.addRow(file, `❌ -> Error while loading event, join for help :  https://discord.gg/fUJUCFuMVW`);
+  table.addRow(file, `❌ -> Error while loading event, uh`);
     }
   }
 

@@ -16,7 +16,7 @@ module.exports = (client) => {
                 client.commands.set(pull.name, pull);
                 table.addRow(file, '✅');
             } else {
-                table.addRow(file, `❌  -> missing a help.name, or help.name is not a string.`);
+                table.addRow(file, `❌  -> You Messed Up The Module Structure`);
                 continue;
             }
     

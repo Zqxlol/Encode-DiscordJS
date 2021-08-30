@@ -1,0 +1,270 @@
+{
+  "website" : {
+    "name": "Encode",
+    "avatar": "https://imgur.com/tAMW5Rh.png",
+    "invite": "/invite",
+    "dashboard": "https://dash.encode.gq",
+    "vote": "/vote"
+  },
+  "commands" : {
+    "moderation": [{
+      "name": "ban",
+      "category": "moderation",
+      "description": "Banish someone From your Discord Server.",
+      "permissions": ["ADMINISTRATOR"],
+      "aliases": ["ban"],
+      "usage": "?ban <@mention> <reason>"
+    }, {
+      "name": "kick",
+      "category": "moderation",
+      "description": "Kick someone From your Discord Server.",
+      "permissions": ["ADMINISTRATOR"],
+      "aliases": ["kick"],
+      "usage": "?kick <@mention> <reason>"
+    }, {
+      "name": "mute",
+      "category": "moderation",
+      "description": "Mute someone From your Disocrd Server.",
+      "permissions": ["MANAGE_ROLES"],
+      "aliases": ["mute"],
+      "usage": "?mute <@mention> <reason>"
+    }, {
+      "name": "reset-warns",
+      "category": "moderation",
+      "description": "Add the code on website with the help of this command.",
+      "permissions": ["ADMINISTRATOR"],
+      "aliases": ["rw"],
+      "usage": "?reset-warns <@mention> "
+    }, {
+      "name": "unmute",
+      "category": "moderation",
+      "description": "Unmute someone From your Disocrd Server.",
+      "permissions": ["MANAGE_ROLES"],
+      "aliases": ["unmute"],
+      "usage": "?unmute <@mention> <reason>"
+    }, {
+      "name": "warn",
+      "category": "moderation",
+      "description": "warn someone From your Disocrd Server.",
+      "permissions": ["ADMINISTRATOR"],
+      "aliases": ["unmute"],
+      "usage": "?unmute <@mention> <reason>"
+    }],
+    "music": [{
+     "name": "play",
+      "category": "music",
+      "description": "plays what ever you want in a voice channel.",
+      "permissions": ["CONNECT", "SPEAK"],
+      "aliases": ["p"],
+      "usage": "?play <song / video>"
+    }, {
+      "name": "stop",
+      "category": "music",
+      "description": "stops whatever is playing.",
+      "permissions": ["NONE"],
+      "aliases": ["s"],
+      "usage": "?stop < 1 / 2 / 3 >"
+    }, {
+      "name": "skip",
+      "category": "music",
+      "description": "skips whatever is playing.",
+      "permissions": ["NONE"],
+      "aliases": ["none"],
+      "usage": "?skip < 1 / 2 / 3 >"
+    }, {
+      "name": "pause",
+      "category": "music",
+      "description": "pauses whatever is playing.",
+      "permissions": ["NONE"],
+      "aliases": ["none"],
+      "usage": "?skip < 1 / 2 / 3 >"
+    }, {
+      "name": "resume",
+      "category": "music",
+      "description": "resumes a paused song",
+      "permissions": ["NONE"],
+      "aliases": ["r"],
+      "usage": "?resume <song>"
+    }, {
+      "name": "queue",
+      "category": "music",
+      "description": "shows the list of songs",
+      "permissions": ["NONE"],
+      "aliases": ["q"],
+      "usage": "?queue"
+    }],
+    "info": [{
+      "name": "credits",
+      "category": "info",
+      "description": "Shows Credits to The Some Of The Commands and Handlers",
+      "permissions": ["NONE"],
+      "aliases": ["r"],
+      "usage": "credits"
+    }, {
+      "name": "help",
+      "category": "info", 
+      "description": "Get list of all command and even get to know every command details",
+      "permissions": ["NONE"],
+      "aliases": ["h"],
+      "usage": "?help <command>"
+    }, {
+      "name": "invite",
+      "category": "info",
+      "description": "Invite Encode!",
+      "permissions": ["NONE"],
+      "aliases": ["inv"],
+      "usage": "ping"
+    }, {
+      "name": "ping",
+      "category": "info",
+      "description": "Pong...",
+      "permissions": ["NONE"],
+      "aliases": ["r"],
+      "usage": "ping"
+    }, {
+      "name": "rank",
+      "category": "info",
+      "description": "Get rank of the user mentioned",
+      "permissions": ["NONE"],
+      "aliases": ["rank"],
+      "usage": "?rank <user>"
+    }, {
+      "name": "userinfo",
+      "category": "info",
+      "description": "resumes a paused song",
+      "permissions": ["NONE"],
+      "aliases": ["whois", "user"],
+      "usage": "userinfo <MENTION>"
+    }, {
+      "name": "warnings",
+      "category": "moderation",
+      "description": "Get the warnings of yours or a mentioned person",
+      "permissions": ["NONE"],
+      "aliases": ["none"],
+      "usage": "?warnings <user>"
+    }],
+    "giveaways": [{
+      "name": "start-giveaway",
+      "category": "giveaways",
+      "description": "starts a giveaway",
+      "permissions": [""],
+      "aliases": [""],
+      "usage": "?start-giveaway <channel> <winners> <prize>" 
+    }, {
+      "name": "end-giveaway",
+      "category": "giveaways",
+      "description": "ends a giveaway",
+      "permissions": [""],
+      "aliases": [""],
+      "usage": "?end-giveaway <message-id>"
+    }, {
+      "name": "reroll-giveaway",
+      "category": "giveaways",
+      "description": "rerolls a giveaway",
+      "permissions": [""],
+      "aliases": [""],
+      "usage": "?reroll-giveaway <message-id>"
+    }],
+    "fun": [{
+      "name": "8ball",
+      "category": "fun",
+      "description": "Literally 8ball",
+      "permissions": ["none"],
+      "aliases": ["none"],
+      "usage": "none"
+  }, {
+    "name": "coinflip",
+      "category": "fun",
+      "description": "Flips a coin",
+      "permissions": [""],
+      "aliases": [""],
+      "usage": "coinflip"
+  }, {
+    "name": "kill",
+      "category": "fun",
+      "description": "Murder. Credit",
+      "permissions": [""],
+      "aliases": [""],
+      "usage": "Kill <Victim>"
+  }, {
+    "name": "reddit",
+      "category": "fun",
+      "description": "Get a random post from the given subreddit",
+      "permissions": [""],
+      "aliases": [""],
+      "usage": ""
+  }, {
+    "name": "uselessweb",
+      "category": "fun",
+      "description": "Provites a random Useless Website",
+      "permissions": [""],
+      "aliases": [""],
+      "usage": "uselessweb"
+  }, {
+    "name": "wikipedia",
+      "category": "fun",
+      "description": "Search anything on WikiPedia",
+      "permissions": [""],
+      "aliases": ["wikipedia, wiki, wikip"],
+      "usage": "wikipedia <Your Search>"
+  }],
+  "utility": [{
+    "name": "purge",
+      "category": "utility",
+      "description": "Deletes a number of messages (with additional flags)",
+      "permissions": ["8192"],
+      "aliases": ["clean', 'clear', 'brrr"],
+      "usage": "purge <amount> <--user / --bots>"
+  }, {
+    "name": "reportbug",
+      "category": "utility",
+      "description": "Report a bug",
+      "permissions": [""],
+      "aliases": ["bug"],
+      "usage": [""]
+  }, {
+    "name": "suggest",
+      "category": "utility",
+      "description": "Send your Suggestion",
+      "permissions": [""],
+      "aliases": [""],
+      "usage": "suggest <message>"
+  }, {
+    "name": "uptime",
+      "category": "utility",
+      "description": "Shows uptime of the bot",
+      "permissions": [""],
+      "aliases": [""],
+      "usage": "uptime"
+  }],
+  "settings": [{
+    "name": "addcommands",
+      "category": "settings",
+      "description": "add guild custom commands",
+      "permissions": [""],
+      "aliases": [""],
+      "usage": "addcmd <cmd_name> <cmd_response>"
+  }, {
+    "name": "delcommand",
+      "category": "settings",
+      "description": "Deletes a custom command",
+      "permissions": [""],
+      "aliases": [""],
+      "usage": "delcmd <cmd_name>"
+  }, {
+    "name": "prefix",
+      "category": "settings",
+      "description": "Change the guild prefix",
+      "permissions": [""],
+      "aliases": ["setprefix", "prefixset", "setreply"],
+      "usage": "prefix <new-prefix>"
+  }, {
+    "name": "setwelcome-channel",
+    "category": "settings",
+    "description": "Set the welcome channel",
+    "permissions": ["SEND_MESSAGE"],
+    "aliases": ["sw", "swc"],
+    "usage": "?setwelcome <channel-id>"
+  }]
+  }
+}

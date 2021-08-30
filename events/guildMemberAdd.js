@@ -3,6 +3,7 @@ const { CanvasSenpai } = require("canvas-senpai")
 const canva = new CanvasSenpai();
 const discord = require("discord.js")
 const WelcomeMes = ['just joined the server!', 'just joined. Everyone, look busy!', 'just joined. Can I get a heal?', 'joined your party.', 'joined. You must construct additional pylons.', 'is here.', 'Stay awhile and listen.', 'We were expecting you ( ͡° ͜ʖ ͡°)', 'We hope you brought pizza.', 'Leave your weapons by the door.', 'appeared.', 'just landed.', 'just joined the server.', 'just joined. Hide your bananas.', 'just slid into the server.', 'just arrived. Seems OP - please nerf.', 'has spawned in the server.', 'showed up!', 'hopped into the server. Kangaroo!!', 'just showed up. Hold my beer.',]
+const welcomemesIndex = Math.floor(Math.random()* WelcomeMes.length);
 
 
 module.exports.run = async (client, member) => {
@@ -23,5 +24,5 @@ module.exports.run = async (client, member) => {
   
 
 
-  client.channels.cache.get(chx).send(member.user.username + "Welcome To The Server!, Don't Forget to Read the Rules!.", attachment);
+  client.channels.cache.get(chx).send(member.user.username + ` ${WelcomeMes[welcomemesIndex]}`, attachment);
 }

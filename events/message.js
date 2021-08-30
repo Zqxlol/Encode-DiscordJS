@@ -1,3 +1,4 @@
+const discord = require('discord.js');
 const db = require("quick.db")
 const { addexp } = require("../handlers/xp.js");
 const { ownerID, default_prefix } = require("../config.json");
@@ -17,11 +18,17 @@ module.exports.run = async (client, message) => {
     message.content.split(" ").forEach(m => {
       if (is_url(m)) {
         message.delete().catch(err => {})
-        return message.channel.send("You are not allowed to send links :/")
+        const automod = new discord.MessageEmbed()
+             .setTitle('Action [AUTOMOD]')
+             .addField('Prohibited', `Your Not Allowed To Send Links`)
+             message.channel.send(automod);
       } else if (badwords.find(x => x.toLowerCase() === m.toLowerCase())) {
 
         message.delete().catch(err => {})
-        return message.channel.send("You are not allowed to use (**" + m + "**) word here")
+        const automod = new discord.MessageEmbed()
+             .setTitle('Action [AUTOMOD]')
+             .addField('Prohibited', `You Can't Use That Word Here`)
+             message.channel.send(automod);
 
       }
     })
@@ -67,7 +74,8 @@ module.exports.run = async (client, message) => {
       if (!message.guild.me.hasPermission(p)) neededPerms.push("`" + p + "`")
     })
 
-    if (neededPerms.length) return message.channel.send(`I need ${neededPerms.join(", ")} permission(s) to execute the command!`)
+    if (neededPerms.length) 
+    return message.channel.send(`I need ${neededPerms.join(", ")} permission(s) to execute the command!`)
   } else if (command.authorPermission) {
     let neededPerms = []
 
@@ -119,6 +127,3 @@ function is_url(str) {
   }
   
 }
-
-
-//thx worn-off-keys
